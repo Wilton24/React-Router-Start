@@ -5,19 +5,20 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProductsPage from "./pages/ProductsPage";
 import RootLayout from "./pages/Root";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <Error />,
     children: [
       { path: "/", element: <Home />, },
-      { path: "products", element: <ProductsPage />, },
-      { path: "/about", element: <About />, },
-      { path: "/contact", element: <Contact />, },
+      { path: "products", element: <ProductsPage /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
     ]
   },
-
 ]);
 
 

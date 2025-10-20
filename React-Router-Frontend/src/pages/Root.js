@@ -5,7 +5,9 @@ export default function RootLayout() {
     return (
         <>
             <MainNavigation />
-            <Outlet />
+            <main className="content">
+                <Outlet />
+            </main>
         </>
     );
 }
