@@ -7,6 +7,7 @@ import ProductsPage from "./pages/ProductsPage";
 import RootLayout from "./pages/Root";
 import Error from "./pages/Error";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import ShamanCat from "./pages/ShamanCat";
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home />, },
       { path: "products", element: <ProductsPage /> },
-      { path: "/about", element: <About /> },
-      { path: "/contact", element: <Contact /> },
-      { path: "products/:productId", element: <ProductDetailsPage /> }
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "products/:productId", element: <ProductDetailsPage /> },
+      { path: "products/:productId/shamancat", element: <ShamanCat /> }
     ]
   },
 ]);
