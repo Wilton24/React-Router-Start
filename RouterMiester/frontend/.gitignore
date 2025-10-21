@@ -1,0 +1,37 @@
+# -------------------------------------------------------------------
+# GLOBAL IGNORES (applies to ALL subfolders)
+# -------------------------------------------------------------------
+
+# 1. Dependency folders in any sub-directory
+# This ignores 'node_modules' wherever it is found inside the repo.
+**/node_modules/
+
+# 2. Build/Output folders in any sub-directory
+# Ignore common build folders like 'dist', 'build', 'out'
+**/build/
+**/dist/
+**/out/
+
+# 3. Development/Local/Cache Files in any sub-directory
+**/.env
+**/.env.local
+**/.DS_Store
+**/.vscode/
+
+# -------------------------------------------------------------------
+# SPECIFIC IGNORES (for projects that use unique folders)
+# -------------------------------------------------------------------
+
+# Example: If your backend uses a unique 'venv' for Python
+**/venv/
+
+# Example: If your frontend uses a specific CRA cache folder
+**/npm-debug.log*
+
+# -------------------------------------------------------------------
+# REPOSITORY ROOT IGNORES (only files/folders directly in /React-Router)
+# -------------------------------------------------------------------
+
+# Files directly in the root of the repository
+/package-lock.json
+/yarn.lock
