@@ -24,22 +24,17 @@ export default function DialogModal({ title, message }) {
     const handleYes = () => {
         console.log("Confirmed: Yes");
         setIsOpen(false);
-        // Add your 'Yes' logic here
     };
 
     const handleNo = () => {
         console.log("Cancelled: No");
         setIsOpen(false);
-        // Add your 'No' logic here
     };
-
-    // Example function for a button that opens the modal (you'd put this in your parent component)
     const handleOpen = () => setIsOpen(true);
 
 
     return (
         <div className="modal-container">
-            {/* Button to open the modal (for demonstration) */}
             <button className="open-button" onClick={handleOpen}>Open Dialog</button>
 
             <dialog ref={dialogRef} className="app-modal">
