@@ -9,6 +9,9 @@ export default function HomePage() {
             <main className="content">
                 <Outlet />
             </main>
+
+            <h1>Welcome to the Event Management App</h1>
+            <p>Manage your events efficiently and effectively.</p>
         </>
     );
 }
