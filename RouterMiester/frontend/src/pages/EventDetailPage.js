@@ -1,14 +1,24 @@
 import { useParams } from "react-router-dom";
+import { EventItem } from "../components/EventItem";
+
 
 export default function EventDetailPage() {
 
 
     const { eventId } = useParams();
-    return <>
-        <h1>Event Detail Page</h1>
-        Event Details for Event ID: {eventId}
-        <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Aliquam expedita eos perferendis? Nostrum, sapiente minima, vitae nesciunt non ratione maxime autem consectetur
-        earum quos dicta sit illum minus accusamus quia!</>;
+    return (
+        <>
+            <EventItem eventId={eventId}></EventItem>
+        </>
+    );
+}
+
+
+export async function loader({ params }) {
+    const { eventId } = params;
+    const response = await fetch(`http://localhost:8080/event/${eventId}`);
+    if (!response.ok) {
+        throw new Response(JSON.stringify({ message: 'Event not found' }), { status: 404 });
+    }
+    return response.json();
 }

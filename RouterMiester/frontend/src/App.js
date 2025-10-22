@@ -4,11 +4,13 @@ import EventsPage, { loader as eventsLoader } from "./pages/EventsPage";
 import RootElement from "./pages/RootElement";
 import EventDetailPage from "./pages/EventDetailPage";
 import NewEventPage from "./pages/NewEventPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootElement />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage />, },
       {
