@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import MainNavigation from "./MainNavigation";
+import DialogModal from "../Modals/DialogModal";
 
 
 export default function HomePage() {
     return (
         <>
-
+            <DialogModal />
             <main className="content">
                 <Outlet />
             </main>
