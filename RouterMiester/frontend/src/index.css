@@ -92,3 +92,100 @@ ul {
   color: #ffd700;
   border-bottom: 2px solid #ffd700;
 }
+
+/* Events PAGE */
+
+/* ========================================= */
+/* 1. Page Layout (events-page) */
+/* ========================================= */
+.events-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Center the page content */
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.events-page__title {
+  font-size: 2.5rem;
+  color: #1a5c6d;
+  /* A nice primary color */
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================= */
+/* 2. Events List Container */
+/* ========================================= */
+.events-list__heading {
+  font-size: 1.75rem;
+  color: #444;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.events-list__container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* CSS Grid for a responsive, clean layout */
+  display: grid;
+  /* On smaller screens, only 1 column. */
+  grid-template-columns: 1fr;
+  gap: 20px;
+  /* Space between the event cards */
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
+  .events-list__container {
+    /* On medium screens, show 2 columns. */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for large desktops */
+@media (min-width: 1024px) {
+  .events-list__container {
+    /* On large screens, show 3 columns. */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================================= */
+/* 3. Individual Event Card */
+/* ========================================= */
+.event-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  /* Ensures shadows/borders are contained */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  /* Subtle lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.event-card__title {
+  font-size: 1.5rem;
+  color: #007bff;
+  /* Highlight the title with a strong color */
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.event-card__description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
