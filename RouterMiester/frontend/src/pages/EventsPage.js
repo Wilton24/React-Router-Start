@@ -1,29 +1,37 @@
-const FAKE_EVENTS = [
-    { id: 'e1', title: 'Event One', description: 'This is the first event' },
-    { id: 'e2', title: 'Event Two', description: 'This is the second event' },
-    { id: 'e3', title: 'Event Three', description: 'This is the third event' },
-    { id: 'e4', title: 'Event Four', description: 'This is the fourth event' },
-];
+import { useEffect, useState } from 'react';
 
+import EventsList from '../components/EventsList';
 
-export default function EventsPage() {
+function EventsPage() {
+    const [isLoading, setIsLoading] = useState(false);
+    const [fetchedEvents, setFetchedEvents] = useState();
+    const [error, setError] = useState();
+
+    useEffect(() => {
+        async function fetchEvents() {
+            setIsLoading(true);
+            const response = await fetch('http://localhost:8080/events');
+
+            if (!response.ok) {
+                setError('Fetching events failed.');
+            } else {
+                const resData = await response.json();
+                setFetchedEvents(resData.events);
+            }
+            setIsLoading(false);
+        }
+
+        fetchEvents();
+    }, []);
     return (
-        <div className="events-page">
-            <h1 className="events-page__title">All Events</h1>
-
-            <section className="events-list">
-                <h2 className="events-list__heading">Upcoming Events</h2>
-                <ul className="events-list__container">
-                    {/* Assuming FAKE_EVENTS is an array of objects */}
-                    {FAKE_EVENTS.map(event => (
-                        <li key={event.id} className="event-card">
-                            <h3 className="event-card__title">{event.title}</h3>
-                            <p className="event-card__description">{event.description}</p>
-                            {/* You might add a link/button here too */}
-                        </li>
-                    ))}
-                </ul>
-            </section>
-        </div>
+        <>
+            <div style={{ textAlign: 'center' }}>
+                {isLoading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
+            </div>
+            {!isLoading && fetchedEvents && <EventsList events={fetchedEvents} />}
+        </>
     );
 }
+
+export default EventsPage;
