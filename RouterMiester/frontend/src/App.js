@@ -5,6 +5,7 @@ import RootElement from "./pages/RootElement";
 import EventDetailPage from "./pages/EventDetailPage";
 import NewEventPage from "./pages/NewEventPage";
 import ErrorPage from "./pages/ErrorPage";
+import { loader as eventDetailLoader } from "./pages/EventDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
         element: <EventsPage />,
         loader: eventsLoader
       },
-      { path: "/events/:eventId", element: <EventDetailPage /> },
+      {
+        path: "/events/:eventId",
+        element: <EventDetailPage />,
+        loader: eventDetailLoader
+      },
       { path: "/events/new", element: <NewEventPage /> },
       { path: "/events/:eventId/edit", element: <EventDetailPage /> },
 
