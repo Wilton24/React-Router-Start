@@ -1,7 +1,12 @@
+import { useParams } from "react-router-dom";
+import EventForm from "../components/EventForm";
 
 export default function EditEventPage() {
+
+    const { eventId } = useParams();
+
     return <>
-        <h1>Edit Event Page</h1>
+        <EventForm eventId={eventId} />
 
     </>;
 }
