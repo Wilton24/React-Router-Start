@@ -17,6 +17,7 @@ function EventItem({ event }) {
         <button onClick={startDeleteHandler}>Delete</button>
       </menu>
     </article>
+
   );
 }
 
