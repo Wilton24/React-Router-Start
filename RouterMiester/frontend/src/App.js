@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       // 👇 NEW PARENT ROUTE FOR ALL EVENT PAGES 👇
       {
         path: "events",
-        // element: <EventsRootLayout />,
+        element: <EventsRootLayout />,
         children: [
           {
             index: true,

@@ -1,12 +1,13 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import EventsNavigation from "./EventsNavigation";
 
 export default function EventsRootLayout() {
-    const navigation = useNavigation();
 
     return (
         <main>
+            <EventsNavigation />
             <main className="content">
-                {navigation.state === 'loading' && <p>Loading...</p>}
+                <h1>Sound Check</h1>
                 <Outlet />
             </main>
         </main>

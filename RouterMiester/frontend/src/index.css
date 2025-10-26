@@ -302,3 +302,63 @@ ul {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* Events Navigation */
+
+/* --- Navigation Container (The bar itself) --- */
+.events-nav {
+  /* Use a background color to make it stand out */
+  background-color: #3f0073;
+  /* Deep Purple */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem 0;
+
+  /* Flexbox for aligning content */
+  display: flex;
+  justify-content: center;
+  /* Center the navigation menu */
+}
+
+/* --- Unordered List (The container for links) --- */
+.events-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* Arrange list items horizontally */
+  display: flex;
+  gap: 2rem;
+  /* Spacing between the list items */
+}
+
+/* --- Individual Link Styles (The anchor text) --- */
+.link-item {
+  text-decoration: none;
+  /* Remove underline */
+  color: #f3f3f3;
+  /* Light/Off-White text */
+  font-size: 1.15rem;
+  font-weight: 600;
+  /* Semi-bold */
+
+  /* Transition for smooth hover/active effects */
+  transition: all 0.2s ease-out;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* --- Hover Effect --- */
+.link-item:hover {
+  color: #ffb400;
+  /* A contrasting color for hover (Amber/Gold) */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slight background change */
+}
+
+/* --- Active Link Styling (For the current page) --- */
+.link-item.active {
+  color: #ffb400;
+  /* The main accent color */
+  border-bottom: 3px solid #ffb400;
+  /* A nice bottom border to highlight */
+}
