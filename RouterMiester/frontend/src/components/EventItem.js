@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import classes from './EventItem.module.css';
+import { deleteEventAction } from '../api/actions';
 
 function EventItem({ event }) {
-  function startDeleteHandler() {
+  async function startDeleteHandler(id) {
     // ...
+    await deleteEventAction(event.id);
   }
 
   return (
@@ -14,7 +16,7 @@ function EventItem({ event }) {
       <p>{event.description}</p>
       <menu className={classes.actions}>
         <Link to="edit" >Edit</Link>
-        <button onClick={startDeleteHandler}>Delete</button>
+        <button onClick={() => startDeleteHandler(event.id)}>Delete</button>
       </menu>
     </article>
 

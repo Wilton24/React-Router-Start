@@ -21,7 +21,6 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <EventsRootLayout />,
-        action: manipulateEventAction,
         children: [
           {
             index: true,
