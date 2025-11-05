@@ -30,7 +30,6 @@ const router = createBrowserRouter([
           {
             path: ":eventId",
             loader: eventDetailLoader,
-            action: deleteEventAction,
             id: 'event-detail',
             children: [
               {
@@ -41,6 +40,10 @@ const router = createBrowserRouter([
                 path: "edit",
                 element: <EditEventPage />,
               },
+              {
+                path: "delete",
+                action: deleteEventAction
+              }
             ]
           },
 

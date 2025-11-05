@@ -38,13 +38,13 @@ export async function manipulateEventAction({ request, params }) {
 }
 
 export async function deleteEventAction({ params }) {
-    // const eventId = params.eventId;
-    // const response = await fetch(`http://localhost:8080/events/${eventId}`, {
-    //     method: 'DELETE',
-    // });
+    const eventId = params.eventId;
+    const response = await fetch(`http://localhost:8080/events/${eventId}`, {
+        method: 'DELETE',
+    });
 
-    // if (!response.ok) {
-    //     throw new Error('Could not delete event. Status: ' + response.status);
-    // }
-    // return redirect('/events');
+    if (!response.ok) {
+        throw new Error('Could not delete event. Status: ' + response.status);
+    }
+    return redirect('/events');
 };

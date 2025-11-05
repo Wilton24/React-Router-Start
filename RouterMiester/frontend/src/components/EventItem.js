@@ -3,13 +3,6 @@ import classes from './EventItem.module.css';
 
 function EventItem({ event }) {
 
-  const confirmDelete = (event) => {
-    const proceed = window.confirm('Are you sure you want to delete this event?');
-    if (!proceed) {
-      event.preventDefault();
-    }
-  };
-
   return (
     <article className={classes.event}>
       <img src={event.image} alt={event.title} />
@@ -19,8 +12,8 @@ function EventItem({ event }) {
       <menu className={classes.actions}>
         <Link to="edit">Edit</Link>
 
-        <Form method="delete" action={event.id}>
-          <button type="submit" onClick={confirmDelete}>Delete</button>
+        <Form method="post" action="delete">
+          <button type="submit">Delete</button>
         </Form>
       </menu>
     </article>
