@@ -9,6 +9,9 @@ function EventForm({ event, method }) {
     navigate('..');
   };
 
+
+  const isSubmitting = navigate.state === 'submitting';
+
   async function eventAction({ request, params }) {
     const data = await request.formData();
 
@@ -54,10 +57,12 @@ function EventForm({ event, method }) {
         <textarea id="description" name="description" rows="5" required defaultValue={event ? event.description : ''} />
       </p>
       <div className={classes.actions}>
-        <button type="button" onClick={cancelHandler}>
+        <button type="button"
+          onClick={cancelHandler}
+          disabled={isSubmitting}>
           Cancel
         </button>
-        <button>Save</button>
+        <button disabled={isSubmitting}>{isSubmitting ? 'Saving...' : 'Save'}</button>
       </div>
     </Form>
   );

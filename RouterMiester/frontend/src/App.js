@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
+      {
+        path: 'newsletter',
+        element: <h1>Newsletter Page</h1>
+      },
       // 👇 NEW PARENT ROUTE FOR ALL EVENT PAGES 👇
       {
         path: "events",
